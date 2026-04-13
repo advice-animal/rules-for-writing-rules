@@ -1,0 +1,1 @@
+bad_rule.py: scope='file' expects {'multiple'}, got 'single'

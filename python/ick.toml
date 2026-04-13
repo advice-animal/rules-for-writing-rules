@@ -1,0 +1,6 @@
+[[rule]]
+name = "argv_scope"
+scope = "repo"
+impl = "python"
+inputs = ["ick.toml", "*.py"]
+deps = ["libcst", "fixit"]
