@@ -29,8 +29,11 @@ def check_toml(toml_path):
         if not py_path.exists():
             continue
         actual = classify_argv(str(py_path))
-        if actual not in EXPECTED[scope]:
-            print(f'{py_path}: scope={scope!r} expects {EXPECTED[scope]}, got {actual!r}')
+        expected = EXPECTED[scope]
+        if scope == 'file' and rule.get('batch_size') == 1:
+            expected = expected | {'single'}
+        if actual not in expected:
+            print(f'{py_path}: scope={scope!r} expects {expected}, got {actual!r}')
             exit_code = 99
     return exit_code
 
