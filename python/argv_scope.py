@@ -40,8 +40,8 @@ def check_toml(toml_path):
 
 def main():
     exit_code = 0
-    for arg in sys.argv[1:]:
-        result = check_toml(Path(arg))
+    for toml_path in Path(".").glob("**/ick.toml"):
+        result = check_toml(toml_path)
         if result == 99:
             exit_code = 99
     sys.exit(exit_code)
