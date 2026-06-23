@@ -1,0 +1,4 @@
+[[rule]]
+name = "bad_rule"
+scope = "file"
+impl = "python"

@@ -1,0 +1,4 @@
+[[rule]]
+name = "good_rule"
+scope = "file"
+impl = "python"
