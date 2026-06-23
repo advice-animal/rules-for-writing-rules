@@ -1,0 +1,5 @@
+# This rule would fail argv_scope, but it explicitly skips /tests/ directories.
+[[rule]]
+name = "a_test_rule"
+scope = "file"
+impl = "python"
