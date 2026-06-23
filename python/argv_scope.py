@@ -41,6 +41,10 @@ def check_toml(toml_path):
 def main():
     exit_code = 0
     for toml_path in Path(".").glob("**/ick.toml"):
+        if "tests" in toml_path.parts:
+            # Rule test suites have ick.toml files in them, but we shouldn't
+            # check those.
+            continue
         result = check_toml(toml_path)
         if result == 99:
             exit_code = 99
