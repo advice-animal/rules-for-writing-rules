@@ -22,7 +22,7 @@ def check_toml(toml_path):
     for rule in rules:
         if rule.get('impl') != 'python':
             continue
-        scope = rule.get('scope')
+        scope = rule.get('scope', 'file')
         if scope not in EXPECTED:
             continue
         py_path = toml_path.parent / f'{rule["name"]}.py'

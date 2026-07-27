@@ -1,0 +1,3 @@
+[[rule]]
+name = "bad_rule"
+impl = "python"
