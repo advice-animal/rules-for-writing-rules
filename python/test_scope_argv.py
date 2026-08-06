@@ -1,5 +1,5 @@
 import pytest
-from scope_argv import classify_argv
+from .scope_argv import classify_argv
 
 
 @pytest.mark.parametrize('src,expected', [
